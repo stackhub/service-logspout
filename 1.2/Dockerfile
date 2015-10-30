@@ -12,6 +12,8 @@ COPY ./kvnator /go/src/github.com/karthequian/kvnator
 WORKDIR /go/src/github.com/karthequian/kvnator
 RUN go get && go build -ldflags "-X main.Version dev" -o /bin/kvnator
 
+RUN touch /tmp/kvnator.txt
+
 ADD runner.sh /bin/runner.sh
 
 RUN chmod 744 /bin/runner.sh
